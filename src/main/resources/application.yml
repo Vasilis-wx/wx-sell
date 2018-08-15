@@ -1,0 +1,6 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file: F:\\sell.log
+#  level:
+#    com.wx.LoggerTest : debug
