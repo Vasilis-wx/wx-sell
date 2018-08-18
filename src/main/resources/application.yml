@@ -13,11 +13,26 @@ spring:
 
   jpa:
     show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
 #   设置方言
-#    properties:
-#      hibernate:
 #        dialect: org.hibernate.dialect.MySQL5Dialect
 #   自动建表
     hibernate:
       ddl-auto: update
+
+# springboot 升级到2.0后 context-path 配置 不起作用
+# context-path:
+server:
+  servlet:
+    context-path: /wxsell
+
+devtools:
+  livereload:
+    enabled: true #是否支持 livereload
+    port: 35729
+  restart:
+    enabled: true #是否支持热部署
 
