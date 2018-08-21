@@ -40,3 +40,7 @@ devtools:
   restart:
     enabled: true #是否支持热部署
 
+wechat:
+  mpAppId: wx214031a92ee408b6
+  mpAppSecret: dbb4bb1e7e210982d31ba6568c78347e
+
