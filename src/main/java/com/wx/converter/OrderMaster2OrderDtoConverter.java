@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * model 转  DTO
  * Created by wx
  * 2018/8/18
  */

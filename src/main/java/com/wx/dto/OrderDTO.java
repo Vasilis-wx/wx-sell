@@ -1,13 +1,16 @@
 package com.wx.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.wx.enums.OrderStatusEnum;
 import com.wx.enums.PayStatusEnum;
 import com.wx.model.OrderDetail;
+import com.wx.util.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +20,7 @@ import java.util.List;
  */
 @Data
 //@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-//@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)//字段为null时不返回
 public class OrderDTO {
 
     /** 订单id. */
@@ -44,15 +47,15 @@ public class OrderDTO {
     /** 支付状态, 默认为0未支付. */
     private Integer payStatus;
 
-//    /** 创建时间. */
-//    @JsonSerialize(using = Date2LongSerializer.class)
-//    private Date createTime;
-//
-//    /** 更新时间. */
-//    @JsonSerialize(using = Date2LongSerializer.class)
-//    private Date updateTime;
-//
-    List<OrderDetail> orderDetailList;
+    /** 创建时间. */
+    @JsonSerialize(using = Date2LongSerializer.class)
+    private Date createTime;
+
+    /** 更新时间. */
+    @JsonSerialize(using = Date2LongSerializer.class)
+    private Date updateTime;
+
+    List<OrderDetail> orderDetailList = new ArrayList<>();
 //
 //    @JsonIgnore
 //    public OrderStatusEnum getOrderStatusEnum() {

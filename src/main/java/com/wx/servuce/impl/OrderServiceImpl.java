@@ -86,7 +86,8 @@ public class OrderServiceImpl implements OrderService {
         ).collect(Collectors.toList());
         productInfoService.decreaseStock(list);
 
-        return null;
+        orderDTO.setOrderId(orderId);
+        return orderDTO;
     }
 
     @Override

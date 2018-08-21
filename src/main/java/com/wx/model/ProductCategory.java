@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * 类目
+ * 商品类别
  */
 @Entity(name="product_category")
 //添加注解后修改时会同步修改设置了同步修改的属性
@@ -19,15 +19,15 @@ import java.util.Date;
 @Data
 public class ProductCategory {
 
-    /** 类目id. */
+    /** 类别id. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
 
-    /** 类目名字. */
+    /** 类别名字. */
     private String categoryName;
 
-    /** 类目编号. */
+    /** 类别编号. */
     private Integer categoryType;
 
     private Date createTime;

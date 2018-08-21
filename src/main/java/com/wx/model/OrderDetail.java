@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
+ * 订单明细
  * @author: wx
  * @date: 2018/8/17
  */

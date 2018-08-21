@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
+ * 订单主表
  * @author: wx 
  * @date: 2018/8/17
  */
@@ -49,8 +50,5 @@ public class OrderMaster {
 
     /** 更新时间. */
     private Date updateTime ;
-
-//    @Transient
-//    private List<OrderDetail> orderDetailList;
 
 }

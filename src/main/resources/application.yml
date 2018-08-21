@@ -16,12 +16,16 @@ spring:
 
     properties:
       hibernate:
-        format_sql: true
+        format  _sql: true
 #   设置方言
 #        dialect: org.hibernate.dialect.MySQL5Dialect
 #   自动建表
     hibernate:
       ddl-auto: update
+
+# 返回到前台的数据字段为null时不显示
+  jackson:
+    default-property-inclusion: non_null
 
 # springboot 升级到2.0后 context-path 配置 不起作用
 # context-path:

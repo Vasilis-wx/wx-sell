@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 商品
+ * 商品信息
  * @author: wx
  * @date: 2018/8/17
  */
