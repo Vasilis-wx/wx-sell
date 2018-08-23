@@ -1,4 +1,4 @@
-package com.wx.servuce.impl;
+package com.wx.service.impl;
 
 import com.wx.dao.ProductInfoDao;
 import com.wx.dto.CartDTO;
@@ -6,7 +6,7 @@ import com.wx.enums.ProductStatusEnum;
 import com.wx.enums.ResultEnum;
 import com.wx.exception.SellException;
 import com.wx.model.ProductInfo;
-import com.wx.servuce.ProductInfoService;
+import com.wx.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

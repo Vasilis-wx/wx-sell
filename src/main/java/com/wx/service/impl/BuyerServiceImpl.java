@@ -1,10 +1,10 @@
-package com.wx.servuce.impl;
+package com.wx.service.impl;
 
 import com.wx.dto.OrderDTO;
 import com.wx.enums.ResultEnum;
 import com.wx.exception.SellException;
-import com.wx.servuce.BuyerService;
-import com.wx.servuce.OrderService;
+import com.wx.service.BuyerService;
+import com.wx.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

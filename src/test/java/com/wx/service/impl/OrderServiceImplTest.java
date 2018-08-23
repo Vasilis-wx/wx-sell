@@ -1,11 +1,9 @@
-package com.wx.servuce.impl;
+package com.wx.service.impl;
 
 import com.wx.dto.OrderDTO;
 import com.wx.enums.OrderStatusEnum;
 import com.wx.enums.PayStatusEnum;
-import com.wx.enums.ResultEnum;
 import com.wx.model.OrderDetail;
-import com.wx.model.OrderMaster;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by wx

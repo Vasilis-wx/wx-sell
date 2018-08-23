@@ -1,8 +1,8 @@
-package com.wx.servuce.impl;
+package com.wx.service.impl;
 
 import com.wx.dao.ProductCategoryDao;
 import com.wx.model.ProductCategory;
-import com.wx.servuce.ProductCategoryService;
+import com.wx.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

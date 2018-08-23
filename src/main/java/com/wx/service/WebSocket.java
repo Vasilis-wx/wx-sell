@@ -1,4 +1,4 @@
-package com.wx.servuce;
+package com.wx.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

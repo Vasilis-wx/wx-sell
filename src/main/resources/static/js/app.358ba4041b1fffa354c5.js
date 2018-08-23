@@ -33,9 +33,9 @@ webpackJsonp([2, 0], [function (t, e, s) {
                 productionGzip: !1,
                 productionGzipExtensions: ["js", "css"],
                 port: 9e3,
-                sellUrl: "http://f2etiy.natappfree.cc/sell",
-                openidUrl: "http://f2etiy.natappfree.cc/sell/wechat/authorize",
-                wechatPayUrl: "http://127.0.0.1"
+                sellUrl: "http://xvmswj.natappfree.cc/sell",
+                openidUrl: "http://xvmswj.natappfree.cc/sell/wechat/authorize",
+                wechatPayUrl: "hhttp://xvmswj.natappfree.cc/sell/pay/create"
             },
             dev: {
                 env: s(29),
@@ -44,8 +44,8 @@ webpackJsonp([2, 0], [function (t, e, s) {
                 assetsPublicPath: "/",
                 proxyTable: {},
                 cssSourceMap: !1,
-                sellUrl: "http://127.0.0.1",
-                openidUrl: "http://f2etiy.natappfree.cc/sell/wechat/authorize",
+                sellUrl: "http://xvmswj.natappfree.cc/sell",
+                openidUrl: "http://xvmswj.natappfree.cc/sell/wechat/authorize",
                 wechatPayUrl: "http://127.0.0.1"
             }
         }

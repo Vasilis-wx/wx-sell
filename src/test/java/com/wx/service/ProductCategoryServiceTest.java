@@ -1,19 +1,15 @@
-package com.wx.servuce;
+package com.wx.service;
 
 import com.wx.model.ProductCategory;
-import com.wx.servuce.impl.ProductCategoryServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by wx
@@ -30,6 +26,7 @@ public class ProductCategoryServiceTest {
     public void findOne() throws Exception {
         ProductCategory tmodel = productCategoryService.findOne(1);
         tmodel.setCategoryName("零食");
+        tmodel.getCategoryName();
         productCategoryService.update(tmodel);
     }
 

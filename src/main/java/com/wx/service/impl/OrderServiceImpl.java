@@ -1,4 +1,4 @@
-package com.wx.servuce.impl;
+package com.wx.service.impl;
 
 import com.wx.converter.OrderMaster2OrderDtoConverter;
 import com.wx.dao.OrderDetailDao;
@@ -12,8 +12,9 @@ import com.wx.exception.SellException;
 import com.wx.model.OrderDetail;
 import com.wx.model.OrderMaster;
 import com.wx.model.ProductInfo;
-import com.wx.servuce.OrderService;
-import com.wx.servuce.ProductInfoService;
+import com.wx.service.OrderService;
+import com.wx.service.PayService;
+import com.wx.service.ProductInfoService;
 import com.wx.util.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -45,6 +46,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderMasterDao orderMasterDao;
+
+    @Autowired
+    private PayService payService;
 
     @Override
     @Transactional
@@ -152,7 +156,7 @@ public class OrderServiceImpl implements OrderService {
 
         /********  4、如果已支付，需要退款  ***********/
         if(orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
-            //TODO
+            payService.refund(orderDTO);
         }
         return orderDTO;
     }

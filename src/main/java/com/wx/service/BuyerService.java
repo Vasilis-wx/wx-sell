@@ -1,4 +1,4 @@
-package com.wx.servuce;
+package com.wx.service;
 
 
 import com.wx.dto.OrderDTO;

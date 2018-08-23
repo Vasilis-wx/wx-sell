@@ -31,8 +31,8 @@ public class WechatControl {
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl){
 
-        String url = "http://e5p2fm.natappfree.cc/wxsell/wechat/userInfo";
-        String redictUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_USERINFO, URLEncoder.encode(returnUrl));
+        String url = "http://xvmswj.natappfree.cc/sell/wechat/userInfo";
+        String redictUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_BASE, URLEncoder.encode(returnUrl));
         log.info("【微信网页授权】result={}",redictUrl);
         return "redirect:"+redictUrl;
     }
