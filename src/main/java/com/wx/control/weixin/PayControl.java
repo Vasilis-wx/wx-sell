@@ -1,4 +1,4 @@
-package com.wx.control;
+package com.wx.control.weixin;
 
 import com.lly835.bestpay.model.PayResponse;
 import com.wx.dto.OrderDTO;

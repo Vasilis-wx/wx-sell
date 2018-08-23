@@ -1,4 +1,4 @@
-package com.wx.control;
+package com.wx.control.weixin;
 
 import com.wx.enums.ResultEnum;
 import com.wx.exception.SellException;

@@ -38,7 +38,7 @@ public class BuyerServiceImpl implements BuyerService {
      * @return
      */
     @Override
-    public OrderDTO cancelOrder(String openid, String orderId) {
+    public OrderDTO cancelOrder(String openid, String orderId) throws Exception{
         OrderDTO orderDTO = checkOrderOwner(openid,orderId);
         if(orderDTO == null){
             log.error("【取消订单】找不到该订单，orderId={}",orderId);

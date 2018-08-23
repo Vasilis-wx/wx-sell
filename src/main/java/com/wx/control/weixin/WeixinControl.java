@@ -1,4 +1,4 @@
-package com.wx.control;
+package com.wx.control.weixin;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

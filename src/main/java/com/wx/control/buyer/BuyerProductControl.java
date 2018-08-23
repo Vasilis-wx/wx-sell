@@ -1,4 +1,4 @@
-package com.wx.control;
+package com.wx.control.buyer;
 
 import com.wx.VO.ProductInfoVO;
 import com.wx.VO.ProductVO;

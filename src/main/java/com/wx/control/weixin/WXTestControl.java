@@ -1,4 +1,4 @@
-package com.wx.control;
+package com.wx.control.weixin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /**
+ * 公众号验证的
  * Created by wx
  * 2018/8/21
  */

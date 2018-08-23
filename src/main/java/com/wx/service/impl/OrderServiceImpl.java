@@ -126,7 +126,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public OrderDTO cancel(OrderDTO orderDTO) {
+    public OrderDTO cancel(OrderDTO orderDTO){
         /********* 1、判断订单状态  *********/
         if(!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())){
             log.error("【取消订单】失败，订单状态不对，只能取消新订单。订单id："+orderDTO.getOrderId());
@@ -154,9 +154,14 @@ public class OrderServiceImpl implements OrderService {
                 .collect(Collectors.toList());
         productInfoService.increaseStock(cartDTOList);
 
-        /********  4、如果已支付，需要退款  ***********/
-        if(orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
-            payService.refund(orderDTO);
+        try {
+            /********  4、如果已支付，需要退款  ***********/
+            if(orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
+                payService.refund(orderDTO);
+            }
+        } catch (Exception e) {
+            log.error("【取消订单】退款失败，orderMaster={}",orderMaster);
+            throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
         return orderDTO;
     }
@@ -211,6 +216,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Page<OrderDTO> findList(Pageable pageable) {
-        return null;
+        //获取订单
+        Page<OrderMaster> orderMasterPage = orderMasterDao.findAll(pageable);
+        //转化从DTO
+        List<OrderDTO> orderDTOList = OrderMaster2OrderDtoConverter.convert(orderMasterPage.getContent());
+        //放到page
+        Page<OrderDTO> orderDTOPage = new PageImpl<OrderDTO>(orderDTOList,pageable,orderMasterPage.getTotalElements());
+        return orderDTOPage;
     }
 }

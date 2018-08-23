@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.wx.enums.OrderStatusEnum;
 import com.wx.enums.PayStatusEnum;
 import com.wx.model.OrderDetail;
+import com.wx.util.EnumUtil;
 import com.wx.util.serializer.Date2LongSerializer;
 import lombok.Data;
 
@@ -56,14 +57,14 @@ public class OrderDTO {
     private Date updateTime;
 
     List<OrderDetail> orderDetailList = new ArrayList<>();
-//
-//    @JsonIgnore
-//    public OrderStatusEnum getOrderStatusEnum() {
-//        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
-//    }
-//
-//    @JsonIgnore
-//    public PayStatusEnum getPayStatusEnum() {
-//        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
-//    }
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum() {
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
+    }
 }

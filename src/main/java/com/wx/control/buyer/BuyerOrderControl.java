@@ -1,5 +1,6 @@
-package com.wx.control;
+package com.wx.control.buyer;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.wx.VO.ResultVO;
 import com.wx.converter.FOrder2OrderDTOConverter;
 import com.wx.dto.OrderDTO;
@@ -109,7 +110,7 @@ public class BuyerOrderControl {
      */
     @GetMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
-                           @RequestParam("orderId") String orderId){
+                           @RequestParam("orderId") String orderId) throws Exception{
 
         buyerService.cancelOrder(openid,orderId);
         return ResultVOUtil.success();

@@ -13,5 +13,5 @@ public interface BuyerService {
     OrderDTO findOrderOne(String openid, String orderId);
 
     //取消订单
-    OrderDTO cancelOrder(String openid, String orderId);
+    OrderDTO cancelOrder(String openid, String orderId) throws Exception;
 }
