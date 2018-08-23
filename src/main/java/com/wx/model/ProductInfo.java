@@ -1,6 +1,8 @@
 package com.wx.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wx.enums.ProductStatusEnum;
+import com.wx.util.EnumUtil;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -47,8 +49,8 @@ public class ProductInfo {
 
     private Date updateTime;
 
-//    @JsonIgnore
-//    public ProductStatusEnum getProductStatusEnum() {
-//        return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
-//    }
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum() {
+        return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
+    }
 }

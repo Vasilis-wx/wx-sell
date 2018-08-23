@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * 2017-07-23 17:20
  */
 @Data
-public class ProductForm {
+public class FProduct {
 
 
     private String productId;
