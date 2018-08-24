@@ -15,7 +15,9 @@ import com.wx.model.ProductInfo;
 import com.wx.service.OrderService;
 import com.wx.service.PayService;
 import com.wx.service.ProductInfoService;
+import com.wx.service.PushMessageService;
 import com.wx.util.KeyUtil;
+import com.wx.websocket.WebSocket;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +51,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private PayService payService;
+
+    @Autowired
+    private PushMessageService pushMessageService;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -91,6 +99,10 @@ public class OrderServiceImpl implements OrderService {
         productInfoService.decreaseStock(list);
 
         orderDTO.setOrderId(orderId);
+
+        /***** 5、发送websocket消息  *****/
+        webSocket.sendMessage("您有新的订单！");
+
         return orderDTO;
     }
 
@@ -184,6 +196,9 @@ public class OrderServiceImpl implements OrderService {
             log.error("【完结订单】失败，orderMaster={}",orderMaster);
             throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
+
+        pushMessageService.orderStatus(orderDTO);
+
         return orderDTO;
     }
 
