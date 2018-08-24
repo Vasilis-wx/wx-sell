@@ -57,6 +57,11 @@ public class WechatControl {
     }
 
     /************** 微信开发平台授权  ********************/
+    /**
+     * 跳转到微信扫吗登录页面
+     * @param returnUrl
+     * @return
+     */
     @GetMapping("/qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl) {
         String url = projectUrlConfig.getWechatOpenAuthorize() + "/sell/wechat/qrUserInfo";
@@ -64,6 +69,12 @@ public class WechatControl {
         return "redirect:" + redirectUrl;
     }
 
+    /**
+     * 扫码登录，获取openid，跳转到登录验证方法
+     * @param code
+     * @param returnUrl
+     * @return
+     */
     @GetMapping("/qrUserInfo")
     public String qrUserInfo(@RequestParam("code") String code,
                              @RequestParam("state") String returnUrl) {
