@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
+ * 微信支付配置
  * @author: wx 
  * @date: 2018/8/22
  */

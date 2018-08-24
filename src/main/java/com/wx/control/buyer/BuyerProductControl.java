@@ -33,6 +33,10 @@ public class BuyerProductControl {
     @Autowired
     private ProductCategoryService productCategoryService;
 
+    /**
+     * 获取所有商品
+     * @return
+     */
     @GetMapping("/list")
     public ResultVO list(){
 

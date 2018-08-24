@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
+ * 微信公众号配置
  * @author: wx 
  * @date: 2018/8/21
  */

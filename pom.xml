@@ -74,16 +74,25 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!--微信支付、支付宝支付-->
 		<dependency>
 			<groupId>cn.springboot</groupId>
 			<artifactId>best-pay-sdk</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+
+		<!--freemarker 框架-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 
+		<!--redis-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
