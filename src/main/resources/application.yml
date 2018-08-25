@@ -8,8 +8,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 123456
-    url: jdbc:mysql://192.168.1.225:6536/wx_wxsell?characterEncoding=utf-8&useSSL=false
+    password: 111111
+    url: jdbc:mysql://47.98.173.75:3306/wxsell?characterEncoding=utf-8&useSSL=false
 
   jpa:
     show-sql: true
