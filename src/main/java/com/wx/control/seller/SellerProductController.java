@@ -10,6 +10,8 @@ import com.wx.util.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -49,7 +51,6 @@ public class SellerProductController {
      * @return
      */
     @GetMapping("/list")
-    @Cacheable(cacheNames = "seller",key = "123")
     public ModelAndView list(@RequestParam(value = "page", defaultValue = "1") Integer page,
                              @RequestParam(value = "size", defaultValue = "10") Integer size,
                              Map<String, Object> map) {
@@ -131,6 +132,8 @@ public class SellerProductController {
      * @return
      */
     @PostMapping("/save")
+//    @CachePut(cacheNames = "buyer",key = "1234")//每次都会执行方法，同时更新redis里的数据
+    @CacheEvict(cacheNames = "buyer",key = "1234")//访问方法后，将redis缓存删除
     public ModelAndView save(@Valid FProduct form,
                              BindingResult bindingResult,//验证结果
                              Map<String, Object> map) {

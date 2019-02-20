@@ -1,0 +1,69 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file: F:\\sell.log
+#  level:
+#    com.wx.LoggerTest : debug
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 111111
+    url: jdbc:mysql://47.98.173.75:3306/wxsell?characterEncoding=utf-8&useSSL=false
+
+  jpa:
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+#   设置方言
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#   自动建表
+    hibernate:
+      ddl-auto: update
+
+# 返回到前台的数据字段为null时不显示
+  jackson:
+    default-property-inclusion: non_null
+
+  redis:
+    host: 47.98.173.75
+    port: 6379
+#  mvc:
+#    static-path-pattern: /**
+
+# springboot 升级到2.0后 context-path 配置 不起作用
+# context-path:
+server:
+  servlet:
+    context-path: /sell
+
+devtools:
+  livereload:
+    enabled: true #是否支持 livereload
+    port: 35729
+  restart:
+    enabled: true #是否支持热部署
+
+wechat:
+  mpAppId: wx214031a92ee408b6
+  mpAppSecret: dbb4bb1e7e210982d31ba6568c78347e
+#wechat:
+#  mpAppId: wxd898fcb01713c658
+#  mpAppSecret: 47ccc303338cee6e62894fxxxxxxxxxxx
+#  openAppId: wx6ad144e54af67d87
+#  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+#  mchId: 1483469312
+#  mchKey: 06C56A89949D617xxxxxxxxxxx
+#  keyPath: /var/weixin_cert/h5.p12
+#  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
+#  templateId:
+#    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+
+project-url:
+  wechatMpAuthorize: http://47.98.173.75:8089
+  wechatOpenAuthorize: http://47.98.173.75:8089
+  sell: http://47.98.173.75:8089
+
+

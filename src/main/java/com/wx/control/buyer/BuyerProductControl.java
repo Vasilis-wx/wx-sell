@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -39,7 +40,12 @@ public class BuyerProductControl {
      * @return
      */
     @GetMapping("/list")
-    public ResultVO list(){
+//    @Cacheable(cacheNames = "buyer",key = "1234")
+    @Cacheable(cacheNames = "buyer",key = "#buyerId",condition = "#buyerId.length() > 3"//conditon 包括的条件
+            ,unless = "#buyerId.length() > 26")//不包含条件
+    //第一次执行方法会进去，将数据保存进redis；
+    //以后执行时会判断redis是否有数据，有：取redis中的数据；没有：执行方法，重新获取数据
+    public ResultVO list(@RequestParam(value ="buyerId",defaultValue = "0") String buyerId){
 
         /***   1、获取所有的商品   ***/
         List<ProductInfo> productInfoList = productInfoService.findUpAll();

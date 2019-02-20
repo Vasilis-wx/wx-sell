@@ -48,7 +48,7 @@ public class OrderServiceImplTest {
         orderDetailList.add(orderDetail);
 
         orderDTO.setOrderDetailList(orderDetailList);
-        orderService.create(orderDTO);
+//        orderService.create(orderDTO);
     }
 
     @Test
